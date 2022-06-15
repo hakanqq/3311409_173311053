@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:spordanismanligi/Pages/EndeksHesaplama.dart';
+import 'package:spordanismanligi/Pages/SporHareketleri.dart';
+import 'package:spordanismanligi/Pages/SporDanismanlari.dart';
 import 'package:spordanismanligi/SportsMoves/Crunch.dart';
 import 'package:spordanismanligi/SportsMoves/DizKaldirma.dart';
 import 'package:spordanismanligi/SportsMoves/DizUstundeSinav.dart';
@@ -8,8 +10,10 @@ import 'package:spordanismanligi/SportsMoves/Plank.dart';
 import 'package:spordanismanligi/SportsMoves/Squat.dart';
 import 'package:spordanismanligi/SportsMoves/TersLunge.dart';
 import 'package:spordanismanligi/SportsMoves/YanBacakKaldirma.dart';
+import 'package:spordanismanligi/Pages/Grafik.dart';
 
 import '../SportsMoves/Kopru.dart';
+
 
 class Homepage extends StatelessWidget {
   @override
@@ -18,18 +22,29 @@ class Homepage extends StatelessWidget {
 
     appBar: AppBar(
       title: Text("EVDE SPOR")),
-    body: SingleChildScrollView(
-      child: Container(
-        child: Center(
-          child: Column(
-            children: <Widget>  [
-              SizedBox(
-               height:100,
-                width: 400,
-                child: InkWell(
-                  child: Container(
-                    color: Colors.white54,
-                    child:Center(
+    body: Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      decoration: const BoxDecoration(
+          image: DecorationImage(
+              opacity: 0.3,
+              image: AssetImage("Assets/sporapp2.jpg"),
+              fit: BoxFit.cover)),
+      child: Center(
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: GestureDetector(
+                child: Container(
+
+                  color: Colors.white54,
+                  child:Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
                         "Vücut Kitle Endeksinizi Öğrenin",
                         textAlign: TextAlign.center,
@@ -41,186 +56,105 @@ class Homepage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  onTap: (){
-                    Navigator.push(context,
-                    MaterialPageRoute(builder: (context)=> EndeksHesaplama() ));
-                  },
+                ),
+                onTap: (){
+                  Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=> EndeksHesaplama() ));
+                },
 
-                )
               ),
-              SizedBox(
-                  height:180,
-                  width: 250,
-                  child: InkWell(
-                    child: Container(
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: GestureDetector(
+                child: Container(
 
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[Image.asset("Assets/lunge.jpg")],
+                  color: Colors.white54,
+                  child:Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Türkiye'de Spor Yapma Grafiği",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.black
+                        ),
 
-                      )
+                      ),
                     ),
-                    onTap: (){
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=> TersLunge() ));
-                    },
+                  ),
+                ),
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=> Grafik() ));
+                },
 
-                  )
               ),
-              Text("LUNGE \n\n", style: TextStyle( fontSize: 40 , fontWeight: FontWeight.w900,  color:(Colors.white) ),),
-              SizedBox(
-                  height:180,
-                  width: 250,
-                  child: InkWell(
-                    child: Container(
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: GestureDetector(
+                child: Container(
 
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[Image.asset("Assets/squaat.jpg")],
+                  color: Colors.white54,
+                  child:Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "SPOR HAREKETLERİ → ",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.black
+                        ),
 
-                        )
+                      ),
                     ),
-                    onTap: (){
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=> Squat() ));
-                    },
+                  ),
+                ),
+                onDoubleTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=> sporhareketleri() ));
+                },
 
-                  )
               ),
-              Text("SQUAT \n\n", style: TextStyle( fontSize: 40 , fontWeight: FontWeight.w900,  color:(Colors.white) ),),
-              SizedBox(
-                  height:180,
-                  width: 250,
-                  child: InkWell(
-                    child: Container(
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: GestureDetector(
+                child: Container(
 
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[Image.asset("Assets/dizustsinav222.jpg")],
+                  color: Colors.white54,
+                  child:Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Spor Danışmanları → ",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.black
+                        ),
 
-                        )
+                      ),
                     ),
-                    onTap: (){
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=> DizUstundeSinav() ));
-                    },
+                  ),
+                ),
+                onLongPress: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context)=> SporDanismanlari() ));
+                },
 
-                  )
               ),
-              Text("DİZ ÜSTÜNDE ŞINAV \n\n", style: TextStyle( fontSize: 40 , fontWeight: FontWeight.w900, color:(Colors.white) ),),
-              SizedBox(
-                  height:180,
-                  width: 250,
-                  child: InkWell(
-                    child: Container(
-
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[Image.asset("Assets/yanbacakkaldrima.jpg")],
-
-                        )
-                    ),
-                    onTap: (){
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=> YanBacakKaldirma() ));
-                    },
-
-                  )
-              ),
-              Text("YAN BACAK KALDIRMA \n\n", style: TextStyle( fontSize: 35 , fontWeight: FontWeight.w900, color:(Colors.white) ),),
-              SizedBox(
-                  height:180,
-                  width: 250,
-                  child: InkWell(
-                    child: Container(
-
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[Image.asset("Assets/kopruu.jpg")],
-
-                        )
-                    ),
-                    onTap: (){
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=> Kopru() ));
-                    },
-
-                  )
-              ),
-              Text("KÖPRÜ HAREKETİ \n\n", style: TextStyle( fontSize: 40 ,fontWeight: FontWeight.w900, color:(Colors.white) ),),
-              SizedBox(
-                  height:180,
-                  width: 250,
-                  child: InkWell(
-                    child: Container(
-
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[Image.asset("Assets/crunch.jpg")],
-
-                        )
-                    ),
-                    onTap: (){
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=> Crunch() ));
-                    },
-
-                  )
-              ),
-              Text("CRUNCH \n\n", style: TextStyle( fontSize: 40 ,fontWeight: FontWeight.w900, color:(Colors.white) ),),
-
-              SizedBox(
-                  height:180,
-                  width: 250,
-
-                  child: InkWell(
-                    child: Container(
-
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                           mainAxisSize: MainAxisSize.max,
-                          children: <Widget>[Image.asset("Assets/plankk.jpg",
-                            fit:BoxFit.cover)],
+            ),
 
 
-                        )
-                    ),
-                    onTap: (){
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=> Plank() ));
-                    },
-
-                  )
-              ),
-              Text("PLANK \n\n", style: TextStyle( fontSize: 40 ,fontWeight: FontWeight.w900, color:(Colors.white) ),),
-              SizedBox(
-                  height:180,
-                  width: 250,
-                  child: InkWell(
-                    child: Container(
-
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[Image.asset("Assets/dizkaldirmaa.jpg")],
-
-                        )
-                    ),
-                    onTap: (){
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context)=> DizKaldirma() ));
-                    },
-
-                  )
-              ),
-              Text("DİZ KALDIRMA \n\n", style: TextStyle( fontSize: 40 ,fontWeight: FontWeight.w900, color:(Colors.white) ),),
 
 
-            ]
-          )
-        ),
-      )
-
-
+    ]
+        )
+      ),
     )
 
 

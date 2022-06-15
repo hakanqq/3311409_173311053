@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spordanismanligi/Pages/Homepage.dart';
+import 'package:spordanismanligi/Pages/loginScreen.dart';
 
 class LoginPage extends StatelessWidget {
 
@@ -20,8 +21,8 @@ class LoginPage extends StatelessWidget {
               ),
             TextButton(onPressed:  (){
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context)=> Homepage() ));
-            }, child: Text("Skip →" , style: TextStyle( fontSize: 20 , fontWeight: FontWeight.w900, color: (Colors.blueAccent )),))
+                  MaterialPageRoute(builder: (context)=> loginScreen() ));
+            }, child: Text("Hoşgeldiniz →" , style: TextStyle( fontSize: 20 , fontWeight: FontWeight.w900, color: (Colors.blueAccent )),))
             ],
           ),
         ),

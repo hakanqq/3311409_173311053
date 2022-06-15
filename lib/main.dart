@@ -1,8 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:spordanismanligi/Pages/Homepage.dart';
 import 'package:spordanismanligi/Pages/login.dart';
 
-void main() => runApp(MyApp());
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -13,8 +18,7 @@ class MyApp extends StatelessWidget {
       title: "Hakan",
       theme:ThemeData(
           primaryColor: Colors.red,
-          accentColor: Colors.blue,
-          scaffoldBackgroundColor: Colors.blue.shade900),
+          scaffoldBackgroundColor: Colors.blue.shade900, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.blue)),
       home: LoginPage (),
 
 
