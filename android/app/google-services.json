@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1000373801463",
+    "project_id": "spor-danismanligi",
+    "storage_bucket": "spor-danismanligi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000373801463:android:ec4f4b9ab3496397d99ef2",
+        "android_client_info": {
+          "package_name": "com.example.spordanismanligi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000373801463-b5grjd85psg8r8agcefbns9bj8trbj2b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDWKraF_iovnzQqAFP5wiqfWZGVUUbCVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1000373801463-b5grjd85psg8r8agcefbns9bj8trbj2b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
